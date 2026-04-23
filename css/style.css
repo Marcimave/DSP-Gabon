@@ -1,76 +1,38 @@
-/*body {
-  counter-reset: section;
-} */
-
-/* .bloc {
-  counter-reset: section;
-} */
-
-/* h2::before {
-  counter-increment: section;
-  content: counter(section, upper-roman) ". ";
-} */
-
-/* 🚫 Supprimer le numéro pour ce titre *
-h2.no-number::before {
-  content: "";
-  counter-increment: none;
-} */
-/* #t1{
-  color: yellow;
-} */
-/* #t2{
-  color: blue;
-} */
-
-/* img{
-  width:100%;
-  border-radius: 10px;
-} */
-    
-  
-/* h1 {
-  color: green ;
-  text-align: center ;
-} */
-  
-/* h2 {
-  text-align: center ;
-} */
-
-/* #p1 {
-  text-align: center;
-} */
-
-
-
-/* FOOTER
-footer {
-  background-color: #1e1e1e;
-  color: white;
-  text-align: center;
-  padding: 15px;
-} */
-
-
-/* RESET */
-
+/* =====================
+   RESET
+===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* =====================
+   VARIABLES (PRO)
+===================== */
+:root {
+  --primary: orange;
+  --primary-dark: darkorange;
+  --dark: #111;
+  --gray: #333;
+  --light: #f4f4f4;
+  --white: #fff;
+}
+
+/* =====================
+   BODY
+===================== */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #f4f4f4, #e0e0e0);
 }
 
-/* HEADER */
+/* =====================
+   HEADER
+===================== */
 header {
-  background: linear-gradient(90deg, #111, #333);
-  color: white;
+  background: linear-gradient(90deg, var(--dark), var(--gray));
+  color: var(--white);
   text-align: center;
   padding: 40px;
   letter-spacing: 2px;
@@ -78,17 +40,21 @@ header {
 
 h1 {
   font-size: 32px;
+  color: green;
+  text-decoration: underline;
 }
 
-/* NAVIGATION */
+/* =====================
+   NAVIGATION
+===================== */
 nav {
-  background-color: #333;
+  background-color: var(--gray);
   padding: 10px;
   text-align: center;
 }
 
 nav a {
-  color: white;
+  color: var(--white);
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
@@ -96,22 +62,26 @@ nav a {
 }
 
 nav a:hover {
-  color: orange;
+  color: var(--primary);
   letter-spacing: 1px;
 }
 
-/* SECTIONS */
+/* =====================
+   SECTIONS
+===================== */
 section {
   padding: 30px;
   text-align: center;
   margin: 20px;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   animation: fadeIn 0.8s ease;
 }
 
-/* IMAGE */
+/* =====================
+   IMAGE
+===================== */
 img {
   width: 90%;
   max-width: 400px;
@@ -123,7 +93,9 @@ img:hover {
   transform: scale(1.05);
 }
 
-/* HERO */
+/* =====================
+   HERO
+===================== */
 .hero {
   padding: 40px 20px;
 }
@@ -133,7 +105,9 @@ img:hover {
   margin-bottom: 20px;
 }
 
-/* OFFRES */
+/* =====================
+   CARTES
+===================== */
 .offres {
   display: flex;
   justify-content: center;
@@ -141,43 +115,52 @@ img:hover {
   flex-wrap: wrap;
 }
 
-/* CARTES */
 .carte {
-  background-color: white;
+  background-color: var(--white);
   padding: 25px;
   width: 250px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .carte:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transform: translateY(-10px);
 }
 
-/* CARTE ACTIVE */
 .carte.active {
-  border: 2px solid orange;
-  transform: scale(1.05);
+  border: 2px solid var(--primary);
 }
 
-/* TEXTE */
-.carte h2 {
-  color: #111;
+/* =====================
+   TEXTE
+===================== */
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-.carte p {
-  color: #555;
+li {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-/* BOUTONS */
+/* =====================
+   LISTES (SAFE)
+===================== */
+.hero ul {
+  display: inline-block;
+  text-align: left;
+}
+
+/* =====================
+   BOUTONS
+===================== */
 button {
-  background: linear-gradient(45deg, orange, darkorange);
+  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
   border: none;
   padding: 12px 20px;
-  color: white;
+  color: var(--white);
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
@@ -185,36 +168,25 @@ button {
 
 button:hover {
   transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(255,140,0,0.5);
 }
 
-button:active {
-  transform: scale(0.95);
-}
-
-/* CTA */
+/* =====================
+   CTA
+===================== */
 .cta {
   display: block;
   width: fit-content;
   margin: 30px auto;
   padding: 15px 25px;
-  background: linear-gradient(45deg, orange, darkorange);
-  color: white;
+  background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+  color: var(--white);
   text-decoration: none;
   border-radius: 10px;
-  font-weight: bold;
-  transition: 0.3s;
 }
 
-.cta:hover {
-  transform: scale(1.1);
-}
-
-/* FORMULAIRE */
-.contact {
-  text-align: center;
-}
-
+/* =====================
+   FORMULAIRE
+===================== */
 form {
   display: flex;
   flex-direction: column;
@@ -227,17 +199,10 @@ input, textarea {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 18px;
 }
 
 input:focus, textarea:focus {
-  outline: none;
-  border: 2px solid orange;
-}
-
-textarea {
-  min-height: 100px;
-  resize: none;
+  border: 2px solid var(--primary);
 }
 
 #confirmation {
@@ -245,15 +210,19 @@ textarea {
   font-weight: bold;
 }
 
-/* FOOTER */
+/* =====================
+   FOOTER
+===================== */
 footer {
-  background-color: #111;
-  color: white;
+  background-color: var(--dark);
+  color: var(--white);
   text-align: center;
   padding: 10px;
 }
 
-/* ANIMATION */
+/* =====================
+   ANIMATION
+===================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -261,82 +230,26 @@ footer {
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 24px;
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
   }
 
   .carte {
     width: 90%;
   }
-
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
 }
 
-ul {
-  display: inline-block;
-  text-align: left;
-}
-
-li {
-  font-size: 18px;
-}
-
-.carte.active {
-  border: 2px solid orange;
-  transform: scale(1.05);
-}
-
-p {
-  font-size: 18px;
-}
-
-#f {
-  font-size:24px ;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-h1 {
-  color: green;
-  text-align: center;
-}
-
-section {
-  margin-bottom: 20px;
-}
-
-p {
-  margin-bottom: 20px;
-}
-article {
-  margin-bottom: 20px;
-}
-
-h1 {
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-.vert {
-  color: green ;
-}
-.jaune {
-  color: yellow ;
-}
-.bleu {
-  color: blue ;
-}
-
-
-
+/* =====================
+   COULEURS UTILES
+===================== */
+.vert { color: green; }
+.jaune { color: goldenrod; }
+.bleu { color: blue; }
